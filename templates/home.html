@@ -8,10 +8,10 @@
 <img class="image" src="{% static 'images/img.png' %}">
 {% if user.is_authenticated %}
   <p>Hello {{ user.email }}</p>
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <p><a href="{% url 'account_logout' %}">Log Out</a></p>
 {% else %}
-  <a href="{% url 'signup' %}">Sign Up</a>
-  <a href="{% url 'login' %}">Log In</a>
+  <p><a href="{% url 'account_signup' %}">Sign Up</a> |
+  <a href="{% url 'account_login' %}">Log In</a></p>
 {% endif %}
 
 {% endblock content %}
