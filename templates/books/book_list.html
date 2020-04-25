@@ -3,9 +3,12 @@
 {% block title %}Books{% endblock title %}
 
 {% block content %}
-  {% for book in book_list %}
-    <div>
-      <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
-    </div>
-  {% endfor %}
+{% if not perms.books.special_status %}
+<a href="{% url 'orders' %}" class="btn btn-primary">Purchase All Books</a>
+{% endif %}
+{% for book in book_list %}
+  <div>
+    <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
+  </div>
+{% endfor %}
 {% endblock content %}
