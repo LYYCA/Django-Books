@@ -13,10 +13,10 @@ services:
     environment: 
       # If the secret key contains a $ then add an additional dollar sign $$
       - SECRET_KEY=n78##rt74prpa_757i!np8x94%dfcph*28mzek$$*2i8^*2ymg&
-      - DEBUG=1
+      - DEBUG=0
       - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_gwtMXDQUcN3iEs3e7r2RBGj900kSPgnKqt
       - STRIPE_TEST_SECRET_KEY=sk_test_98736l4gyireCbm2ANG2RwNb00fEN2fG1c
-      - ENVIRONMENT=development
+      - ENVIRONMENT=production
     volumes:
       - .:/code
     ports:
