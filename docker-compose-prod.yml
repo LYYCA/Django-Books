@@ -9,7 +9,7 @@ services:
         - postgres_data:/var/lib/postgresql/data/
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn bookstore_project.wsgi -b 0.0.0.0:8000
     environment: 
       # If the secret key contains a $ then add an additional dollar sign $$
       - SECRET_KEY=n78##rt74prpa_757i!np8x94%dfcph*28mzek$$*2i8^*2ymg&
